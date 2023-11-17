@@ -9,7 +9,7 @@ namespace GESAMM
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            System.Data.SqlClient.SqlConnection connection = new();
+
         }
     }
 }
