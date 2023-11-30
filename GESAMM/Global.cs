@@ -11,7 +11,7 @@ namespace GESAMM
     {
         public static SqlConnection db { get; private set; }
 
-        public static void InitDatabase()
+        public static async Task<bool> InitDatabase()
         {
             SqlConnectionStringBuilder builder = new();
 
@@ -27,11 +27,14 @@ namespace GESAMM
 
             try
             {
-                db.Open();
+                await db.OpenAsync();
+                //MessageBox.Show("Connecté !");
+                return true;
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Impossible de se connecter à la base de données");
+                //MessageBox.Show(ex.Message, "Impossible de se connecter à la base de données");
+                return false;
             }
         }
     }
