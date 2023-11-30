@@ -11,6 +11,11 @@ namespace GESAMM
     {
         public static SqlConnection db { get; private set; }
 
+        public static Dictionary<string, Famille> familles = new Dictionary<string, Famille>();
+        public static Dictionary<string, Medicament> medicaments = new Dictionary<string, Medicament>();
+        public static List<Etape> etapes = new List<Etape>();
+        public static List<Decision> decisions = new List<Decision>();
+
         public static async Task<bool> InitDatabase()
         {
             SqlConnectionStringBuilder builder = new();
