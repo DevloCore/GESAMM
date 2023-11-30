@@ -50,19 +50,5 @@ namespace GESAMM
             etapes.Add(workflow);
         }
 
-        //public Workflow[] lesEtapes()
-        //{
-        //    List<Workflow> steps = new List<Workflow>();
-
-        //    foreach(Etape etape in etapes)
-        //    {
-        //        Decision decision = Global.decisions.First((val) => val.getId() == )
-        //        Workflow workflow = new Workflow(DateTime.Now, etape.getNum());
-        //        steps.Add();
-        //    }
-
-        //    return steps.ToArray();
-        //}
-
     }
 }
