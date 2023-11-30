@@ -9,18 +9,18 @@ namespace GESAMM
     public class Famille
     {
         private string code;
-        private string name;
+        private string libelle;
         private int nbMediAmm;
 
-        public Famille(string code, string name, int nbMediAmm)
+        public Famille(string code, string libelle, int nbMediAmm)
         {
             this.code = code;
-            this.name = name;
+            this.libelle = libelle;
             this.nbMediAmm = nbMediAmm;
         }
 
         public string getCode() { return code; }
-        public string getName() { return name; }
+        public string getLibelle() { return libelle; }
         public int getNbMediAmm() { return nbMediAmm; }
 
     }
