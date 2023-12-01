@@ -16,5 +16,19 @@ namespace GESAMM
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+        }
+
+        private ListeMedicaments listeMedicaments;
+        private void consulterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listeMedicaments == null || listeMedicaments.IsDisposed)
+                listeMedicaments = new ListeMedicaments();
+
+            listeMedicaments.MdiParent = this;
+            listeMedicaments.Show();
+        }
     }
 }
