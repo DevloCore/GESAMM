@@ -23,5 +23,7 @@ namespace GESAMM
         public string getLibelle() { return libelle; }
 
         public EtapeNormee? getEtapeNormee() { return etapeNormee; }
+
+        public bool estNormee() { return etapeNormee != null; }
     }
 }

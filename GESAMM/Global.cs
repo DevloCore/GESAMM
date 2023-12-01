@@ -11,22 +11,28 @@ namespace GESAMM
     {
         public static SqlConnection db { get; private set; }
 
-        public static Dictionary<string, Famille> familles = new Dictionary<string, Famille>();
-        public static Dictionary<string, Medicament> medicaments = new Dictionary<string, Medicament>();
-        public static List<Etape> etapes = new List<Etape>();
-        public static List<Decision> decisions = new List<Decision>();
+        public static Dictionary<string, Famille> familles;
+        public static Dictionary<string, Medicament> medicaments;
+        public static List<Etape> etapes;
+        public static List<Decision> decisions;
 
-        public static async Task<bool> InitDatabase()
+        public static async Task<bool> Init()
         {
-            SqlConnectionStringBuilder builder = new();
+            familles = new Dictionary<string, Famille>();
+            medicaments = new Dictionary<string, Medicament>();
+            etapes = new List<Etape>();
+            decisions = new List<Decision>();
 
-            builder.DataSource = ".\\SQLEXPRESS";
-            //builder.UserID = "<your_username>";
-            //builder.Password = "<your_password>";
-            builder.InitialCatalog = "GESAMM";
-            builder.IntegratedSecurity = true;
-            builder.TrustServerCertificate = true;
-            builder.MultipleActiveResultSets = true;
+            SqlConnectionStringBuilder builder = new()
+            {
+                DataSource = ".\\SQLEXPRESS",
+                //builder.UserID = "<your_username>";
+                //builder.Password = "<your_password>";
+                InitialCatalog = "GESAMM",
+                IntegratedSecurity = true,
+                TrustServerCertificate = true,
+                MultipleActiveResultSets = true
+            };
 
             db = new SqlConnection(builder.ConnectionString);
 
@@ -46,18 +52,27 @@ namespace GESAMM
 
         public static async Task LoadFirstData()
         {
-            //il va falloir créer cette procédure mais également la 2ème pour les medicaments
-
-            SqlCommand request = new SqlCommand("prc_listeFamilles", db);
+            SqlCommand request = new SqlCommand("prc_liste_familles", db);
             request.CommandType = System.Data.CommandType.StoredProcedure;
             SqlDataReader sqlReader = await request.ExecuteReaderAsync();
 
             while (await sqlReader.ReadAsync())
             {
-                //Ajouter une famille a la liste 'familles' dans la classe Global
+                Famille famille = new(sqlReader["code"].ToString(), sqlReader["libelle"].ToString(), int.Parse(sqlReader["nbMediAmm"].ToString()));
+                familles.Add(famille.getCode(), famille);
             }
 
             //FAIRE DE MEME POUR LES MEDICAMENTS
+
+            request = new SqlCommand("prc_liste_medicaments", db);
+            request.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlReader = await request.ExecuteReaderAsync();
+
+            while (await sqlReader.ReadAsync())
+            {
+                Medicament medicament = new(sqlReader["depotLegal"].ToString(), sqlReader["nomCommercial"].ToString(), sqlReader["composition"].ToString(), sqlReader["effets"].ToString(), sqlReader["contreIndications"].ToString(), sqlReader["amm"].ToString(), 0, sqlReader["codeFamille"].ToString());
+                medicaments.Add(medicament.getDepotLegal(), medicament);
+            }
         }
     }
 }

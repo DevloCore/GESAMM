@@ -16,7 +16,7 @@ namespace GESAMM
         {
             barConnectingDb.Style = ProgressBarStyle.Marquee;
 
-            bool dbSuccess = await Global.InitDatabase();
+            bool dbSuccess = await Global.Init();
             if (dbSuccess)
             {
                 new Menu().Show(this);
