@@ -9,8 +9,19 @@ namespace GESAMM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            NextState();
             Starting();
         }
+
+        private void NextState()
+        {
+            bool enable = connectedAndLoaded && getUsernameInput() != "";
+            buttonLogin.Enabled = enable;
+        }
+
+        private string getUsernameInput() { return tb_username.Text.Trim(); }
+
+        private bool connectedAndLoaded = false;
 
         private async void Starting()
         {
@@ -19,8 +30,10 @@ namespace GESAMM
             bool dbSuccess = await Global.Init();
             if (dbSuccess)
             {
-                new Menu().Show(this);
-                Hide();
+                connectedAndLoaded = true;
+                labelConnecting.Visible = false;
+                barConnectingDb.Visible = false;
+                NextState();
             }
             else
             {
@@ -32,6 +45,18 @@ namespace GESAMM
                 }
                 else Application.Exit();
             }
+        }
+
+        private void tb_username_TextChanged(object sender, EventArgs e)
+        {
+            NextState();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Global.username = getUsernameInput();
+            new Menu().Show(this);
+            Hide();
         }
     }
 }
