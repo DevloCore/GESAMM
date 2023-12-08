@@ -19,6 +19,7 @@ namespace GESAMM
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Bienvenue " + Global.username);
         }
 
         private ListeMedicaments listeMedicaments;
