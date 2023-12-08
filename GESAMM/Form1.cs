@@ -38,7 +38,7 @@ namespace GESAMM
             else
             {
                 barConnectingDb.Style = ProgressBarStyle.Continuous;
-                var msgBox = MessageBox.Show("Impossible de se connecter à la base de données.", "Erreur", MessageBoxButtons.RetryCancel);
+                var msgBox = MessageBox.Show("Impossible de se connecter à la base de données ou erreur lors du chargement de celle-ci.", "Erreur", MessageBoxButtons.RetryCancel);
                 if(msgBox == DialogResult.Retry)
                 {
                     Starting();
