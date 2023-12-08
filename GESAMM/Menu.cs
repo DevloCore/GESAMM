@@ -30,5 +30,16 @@ namespace GESAMM
             listeMedicaments.MdiParent = this;
             listeMedicaments.Show();
         }
+
+        private AjoutMedicament AjoutMedicament;
+        private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (AjoutMedicament == null || AjoutMedicament.IsDisposed)
+                AjoutMedicament = new AjoutMedicament();
+
+            AjoutMedicament.MdiParent = this;
+            AjoutMedicament.Show();
+
+        }
     }
 }
