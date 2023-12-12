@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,15 +15,15 @@ namespace GESAMM
 
         public static Dictionary<string, Famille> familles;
         public static Dictionary<string, Medicament> medicaments;
-        public static List<Etape> etapes;
-        public static List<Decision> decisions;
+        public static Dictionary<int, Etape> etapes;
+        public static Dictionary<int, Decision> decisions;
 
         public static async Task<bool> Init()
         {
             familles = new Dictionary<string, Famille>();
             medicaments = new Dictionary<string, Medicament>();
-            etapes = new List<Etape>();
-            decisions = new List<Decision>();
+            etapes = new Dictionary<int, Etape>();
+            decisions = new Dictionary <int, Decision>();
 
             SqlConnectionStringBuilder builder = new()
             {
@@ -117,10 +117,10 @@ namespace GESAMM
                         DateOnly.FromDateTime(DateTime.Parse(sqlReader["WOR_DATE_DECISION"].ToString())),
                         int.Parse(sqlReader["WOR_ETA_NUM"].ToString()),
                         int.Parse(sqlReader["WOR_DEC_ID"].ToString())
-                    ));
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    ));
         }
     }
 }

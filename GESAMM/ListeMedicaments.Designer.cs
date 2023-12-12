@@ -1,4 +1,4 @@
-﻿namespace GESAMM
+namespace GESAMM
 {
     partial class ListeMedicaments
     {
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SuspendLayout();
+            this.cb_enValid = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.listMedicaments = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cb_enValid = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
             // 
             // listMedicaments
             // 

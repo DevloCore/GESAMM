@@ -31,5 +31,17 @@ namespace GESAMM
             listeMedicaments.MdiParent = this;
             listeMedicaments.Show();
         }
+
+        private DecisionEtape decisionEtape;
+        private void DecisionMedicamentMenu_Click(object sender, EventArgs e)
+        {
+            if (decisionEtape == null || decisionEtape.IsDisposed)
+            {
+                decisionEtape = new DecisionEtape();
+            }
+
+            decisionEtape.MdiParent = this;
+            decisionEtape.Show();
+        }
     }
 }
