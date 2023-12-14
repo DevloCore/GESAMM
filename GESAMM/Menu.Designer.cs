@@ -28,34 +28,33 @@ namespace GESAMM
         /// </summary>
         private void InitializeComponent()
         {
-            this.médicamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consulterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            médicamentsToolStripMenuItem = new ToolStripMenuItem();
+            consulterToolStripMenuItem = new ToolStripMenuItem();
+            ajouterToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // médicamentsToolStripMenuItem
             // 
-            this.médicamentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consulterToolStripMenuItem,
-            this.ajouterToolStripMenuItem});
-            this.médicamentsToolStripMenuItem.Name = "médicamentsToolStripMenuItem";
-            this.médicamentsToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
-            this.médicamentsToolStripMenuItem.Text = "Médicaments";
+            médicamentsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consulterToolStripMenuItem, ajouterToolStripMenuItem });
+            médicamentsToolStripMenuItem.Name = "médicamentsToolStripMenuItem";
+            médicamentsToolStripMenuItem.Size = new Size(112, 24);
+            médicamentsToolStripMenuItem.Text = "Médicaments";
             // 
             // consulterToolStripMenuItem
             // 
-            this.consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
-            this.consulterToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.consulterToolStripMenuItem.Text = "Consulter";
-            this.consulterToolStripMenuItem.Click += new System.EventHandler(this.consulterToolStripMenuItem_Click);
+            consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
+            consulterToolStripMenuItem.Size = new Size(224, 26);
+            consulterToolStripMenuItem.Text = "Consulter";
+            consulterToolStripMenuItem.Click += consulterToolStripMenuItem_Click;
             // 
             // ajouterToolStripMenuItem
             // 
-            this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.ajouterToolStripMenuItem.Text = "Ajouter";
+            ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
+            ajouterToolStripMenuItem.Size = new Size(224, 26);
+            ajouterToolStripMenuItem.Text = "Ajouter";
+            ajouterToolStripMenuItem.Click += ajouterToolStripMenuItem_Click;
             // 
             // menuStrip1
             // 
