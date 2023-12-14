@@ -32,6 +32,8 @@ namespace GESAMM
             consulterToolStripMenuItem = new ToolStripMenuItem();
             ajouterToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
+            familleToolStripMenuItem = new ToolStripMenuItem();
+            nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,44 +47,56 @@ namespace GESAMM
             // consulterToolStripMenuItem
             // 
             consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
-            consulterToolStripMenuItem.Size = new Size(224, 26);
+            consulterToolStripMenuItem.Size = new Size(154, 26);
             consulterToolStripMenuItem.Text = "Consulter";
             consulterToolStripMenuItem.Click += consulterToolStripMenuItem_Click;
             // 
             // ajouterToolStripMenuItem
             // 
             ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            ajouterToolStripMenuItem.Size = new Size(224, 26);
+            ajouterToolStripMenuItem.Size = new Size(154, 26);
             ajouterToolStripMenuItem.Text = "Ajouter";
             ajouterToolStripMenuItem.Click += ajouterToolStripMenuItem_Click;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.médicamentsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { médicamentsToolStripMenuItem, familleToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1262, 28);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // familleToolStripMenuItem
+            // 
+            familleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nombreDeMédicamentParFamilleToolStripMenuItem });
+            familleToolStripMenuItem.Name = "familleToolStripMenuItem";
+            familleToolStripMenuItem.Size = new Size(178, 24);
+            familleToolStripMenuItem.Text = "Famille de médicament";
+            // 
+            // nombreDeMédicamentParFamilleToolStripMenuItem
+            // 
+            nombreDeMédicamentParFamilleToolStripMenuItem.Name = "nombreDeMédicamentParFamilleToolStripMenuItem";
+            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(331, 26);
+            nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
+            nombreDeMédicamentParFamilleToolStripMenuItem.Click += nombreDeMédicamentParFamilleToolStripMenuItem_Click;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Menu";
-            this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1262, 673);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
+            Name = "Menu";
+            Text = "Menu";
+            Load += Menu_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -91,5 +105,7 @@ namespace GESAMM
         private ToolStripMenuItem consulterToolStripMenuItem;
         private ToolStripMenuItem ajouterToolStripMenuItem;
         private MenuStrip menuStrip1;
+        private ToolStripMenuItem familleToolStripMenuItem;
+        private ToolStripMenuItem nombreDeMédicamentParFamilleToolStripMenuItem;
     }
 }

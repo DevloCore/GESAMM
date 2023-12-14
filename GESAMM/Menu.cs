@@ -54,5 +54,16 @@ namespace GESAMM
             decisionEtape.MdiParent = this;
             decisionEtape.Show();
         }
+
+        private medParFamille medParFamille;
+
+        private void nombreDeMédicamentParFamilleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (medParFamille == null || medParFamille.IsDisposed)
+
+                medParFamille = new medParFamille();
+            medParFamille.MdiParent = this;
+            medParFamille.Show();
+        }
     }
 }
