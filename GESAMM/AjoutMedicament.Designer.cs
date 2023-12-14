@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             gb_formulaire_ajout_medic = new GroupBox();
+            cb_famille_medicament = new ComboBox();
+            nud_prix_echantillon_medicament = new NumericUpDown();
             tb_depot_legal_medicament = new TextBox();
             label_depot_legal_medicament = new Label();
             button_valider_ajout_medicament = new Button();
             tb_AMM_medicament = new TextBox();
-            tb_prix_echantillon_medicament = new TextBox();
             label_AMM_medicament = new Label();
             label_prix_echantillon_medicament = new Label();
             tb_contre_indication_medicament = new TextBox();
@@ -42,23 +43,21 @@
             label_effet_medicament = new Label();
             tb_composition_medicament = new TextBox();
             label_composition_medicament = new Label();
-            tb_code_famille = new TextBox();
             label_code_famille = new Label();
             label_nom_commercial = new Label();
             tb_nom_commercial = new TextBox();
-            numericUpDown1 = new NumericUpDown();
             gb_formulaire_ajout_medic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_prix_echantillon_medicament).BeginInit();
             SuspendLayout();
             // 
             // gb_formulaire_ajout_medic
             // 
-            gb_formulaire_ajout_medic.Controls.Add(numericUpDown1);
+            gb_formulaire_ajout_medic.Controls.Add(cb_famille_medicament);
+            gb_formulaire_ajout_medic.Controls.Add(nud_prix_echantillon_medicament);
             gb_formulaire_ajout_medic.Controls.Add(tb_depot_legal_medicament);
             gb_formulaire_ajout_medic.Controls.Add(label_depot_legal_medicament);
             gb_formulaire_ajout_medic.Controls.Add(button_valider_ajout_medicament);
             gb_formulaire_ajout_medic.Controls.Add(tb_AMM_medicament);
-            gb_formulaire_ajout_medic.Controls.Add(tb_prix_echantillon_medicament);
             gb_formulaire_ajout_medic.Controls.Add(label_AMM_medicament);
             gb_formulaire_ajout_medic.Controls.Add(label_prix_echantillon_medicament);
             gb_formulaire_ajout_medic.Controls.Add(tb_contre_indication_medicament);
@@ -67,7 +66,6 @@
             gb_formulaire_ajout_medic.Controls.Add(label_effet_medicament);
             gb_formulaire_ajout_medic.Controls.Add(tb_composition_medicament);
             gb_formulaire_ajout_medic.Controls.Add(label_composition_medicament);
-            gb_formulaire_ajout_medic.Controls.Add(tb_code_famille);
             gb_formulaire_ajout_medic.Controls.Add(label_code_famille);
             gb_formulaire_ajout_medic.Controls.Add(label_nom_commercial);
             gb_formulaire_ajout_medic.Controls.Add(tb_nom_commercial);
@@ -77,6 +75,24 @@
             gb_formulaire_ajout_medic.TabIndex = 0;
             gb_formulaire_ajout_medic.TabStop = false;
             gb_formulaire_ajout_medic.Text = "Formulaire d'ajout d'un médicament";
+            // 
+            // cb_famille_medicament
+            // 
+            cb_famille_medicament.FormattingEnabled = true;
+            cb_famille_medicament.Location = new Point(182, 82);
+            cb_famille_medicament.Name = "cb_famille_medicament";
+            cb_famille_medicament.Size = new Size(125, 28);
+            cb_famille_medicament.TabIndex = 18;
+            cb_famille_medicament.SelectedIndexChanged += cb_famille_medicament_SelectedIndexChanged;
+            // 
+            // nud_prix_echantillon_medicament
+            // 
+            nud_prix_echantillon_medicament.Location = new Point(182, 286);
+            nud_prix_echantillon_medicament.Maximum = new decimal(new int[] { 1241513983, 370409800, 542101, 0 });
+            nud_prix_echantillon_medicament.Name = "nud_prix_echantillon_medicament";
+            nud_prix_echantillon_medicament.Size = new Size(125, 27);
+            nud_prix_echantillon_medicament.TabIndex = 17;
+            nud_prix_echantillon_medicament.ValueChanged += nud_prix_echantillon_medicament_ValueChanged;
             // 
             // tb_depot_legal_medicament
             // 
@@ -112,14 +128,6 @@
             tb_AMM_medicament.Size = new Size(125, 27);
             tb_AMM_medicament.TabIndex = 13;
             tb_AMM_medicament.TextChanged += tb_AMM_medicament_TextChanged;
-            // 
-            // tb_prix_echantillon_medicament
-            // 
-            tb_prix_echantillon_medicament.Location = new Point(182, 285);
-            tb_prix_echantillon_medicament.Name = "tb_prix_echantillon_medicament";
-            tb_prix_echantillon_medicament.Size = new Size(125, 27);
-            tb_prix_echantillon_medicament.TabIndex = 12;
-            tb_prix_echantillon_medicament.TextChanged += tb_prix_echantillon_medicament_TextChanged;
             // 
             // label_AMM_medicament
             // 
@@ -190,14 +198,6 @@
             label_composition_medicament.TabIndex = 4;
             label_composition_medicament.Text = "Composition: ";
             // 
-            // tb_code_famille
-            // 
-            tb_code_famille.Location = new Point(182, 82);
-            tb_code_famille.Name = "tb_code_famille";
-            tb_code_famille.Size = new Size(125, 27);
-            tb_code_famille.TabIndex = 3;
-            tb_code_famille.TextChanged += tb_code_famille_TextChanged;
-            // 
             // label_code_famille
             // 
             label_code_famille.AutoSize = true;
@@ -224,15 +224,6 @@
             tb_nom_commercial.TabIndex = 0;
             tb_nom_commercial.TextChanged += tb_nom_commercial_TextChanged;
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(339, 285);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(44, 27);
-            numericUpDown1.TabIndex = 17;
-            numericUpDown1.Maximum = 10;
-            numericUpDown1.Minimum = 0;
-            // 
             // AjoutMedicament
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -243,14 +234,13 @@
             Text = "Ajout de médicament";
             gb_formulaire_ajout_medic.ResumeLayout(false);
             gb_formulaire_ajout_medic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_prix_echantillon_medicament).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox gb_formulaire_ajout_medic;
-        private TextBox tb_code_famille;
         private Label label_code_famille;
         private Label label_nom_commercial;
         private TextBox tb_nom_commercial;
@@ -263,10 +253,10 @@
         private TextBox tb_contre_indication_medicament;
         private Button button_valider_ajout_medicament;
         private TextBox tb_AMM_medicament;
-        private TextBox tb_prix_echantillon_medicament;
         private Label label_AMM_medicament;
         private TextBox tb_depot_legal_medicament;
         private Label label_depot_legal_medicament;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nud_prix_echantillon_medicament;
+        private ComboBox cb_famille_medicament;
     }
 }
