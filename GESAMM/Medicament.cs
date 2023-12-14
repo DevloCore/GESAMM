@@ -42,6 +42,7 @@ namespace GESAMM
         public string getAmm() { return amm; }
         public int getDerniereEtape() { return derniereEtape; }
         public string getCodeFamille() { return codeFamille; }
+        public List<Workflow> getEtapes() { return etapes; }
 
         public bool estRefusé()
         {

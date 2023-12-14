@@ -33,7 +33,8 @@ namespace GESAMM
         }
 
         private DecisionEtape decisionEtape;
-        private void DecisionMedicamentMenu_Click(object sender, EventArgs e)
+
+        private void decisionEtapeToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (decisionEtape == null || decisionEtape.IsDisposed)
             {
