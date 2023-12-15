@@ -223,7 +223,7 @@ namespace GESAMM
                     btnValider.Enabled = false;
                 }
             }
-
+            Global.ReloadData(true);
         }
     }
 }

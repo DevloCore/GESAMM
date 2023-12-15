@@ -25,6 +25,7 @@ namespace GESAMM
             medicaments = new Dictionary<string, Medicament>();
             etapes = new List<Etape>();
             decisions = new List<Decision>();
+            utilisateurs = new List<Utilisateur>();
 
             SqlConnectionStringBuilder builder = new()
             {

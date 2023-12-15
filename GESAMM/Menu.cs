@@ -21,7 +21,7 @@ namespace GESAMM
 
         private void CustomOpen(Form form)
         {
-            if(lastForm != null) lastForm.Close();
+            if (lastForm != null) lastForm.Close();
 
             lastForm = form;
             form.MdiParent = this;
