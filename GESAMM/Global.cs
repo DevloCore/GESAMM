@@ -55,89 +55,94 @@ namespace GESAMM
 
         private static async Task LoadFirstData()
         {
-            familles = new Dictionary<string, Famille>();
-            medicaments = new Dictionary<string, Medicament>();
-            etapes = new List<Etape>();
-            decisions = new List<Decision>();
-            utilisateurs = new List<Utilisateur>();
-
-            //FAMILLES
-            SqlCommand request = new SqlCommand("prc_liste_familles", db);
-            request.CommandType = System.Data.CommandType.StoredProcedure;
-            SqlDataReader sqlReader = await request.ExecuteReaderAsync();
-
-            while (await sqlReader.ReadAsync())
-            {
-                Famille famille = new(sqlReader["code"].ToString(), sqlReader["libelle"].ToString(), int.Parse(sqlReader["nbMediAmm"].ToString()));
-                familles.Add(famille.getCode(), famille);
-            }
-
-            //MEDICAMENTS
-            request = new SqlCommand("prc_liste_medicaments", db);
-            request.CommandType = System.Data.CommandType.StoredProcedure;
-            sqlReader = await request.ExecuteReaderAsync();
-
-
-            while (await sqlReader.ReadAsync())
-            {
-                float prixEchantillon;
-                bool prixEchantillonExiste = float.TryParse(sqlReader["prixEchantillon"].ToString(), out prixEchantillon);
-                Medicament medicament = new(sqlReader["depotLegal"].ToString(), sqlReader["nomCommercial"].ToString(), sqlReader["composition"].ToString(), sqlReader["effets"].ToString(), sqlReader["contreIndications"].ToString(), prixEchantillonExiste ? prixEchantillon : null, sqlReader["amm"].ToString(), int.Parse(sqlReader["derniereEtape"].ToString()), sqlReader["codeFamille"].ToString());
-                medicaments.Add(medicament.getDepotLegal(), medicament);
-            }
-
-            //Etapes
-            string sql = "SELECT ETA_NUM, ETA_LIBELLE from etape";
-            request = new SqlCommand(sql, db);
-            request.CommandType = System.Data.CommandType.Text;
-            sqlReader = await request.ExecuteReaderAsync();
-
-            while (await sqlReader.ReadAsync())
-            {
-                etapes.Add(new(int.Parse(sqlReader["ETA_NUM"].ToString()), sqlReader["ETA_LIBELLE"].ToString()));
-            }
-
-            //Decisions
-            sql = "SELECT DEC_ID, libelleDecision from decision";
-            request = new SqlCommand(sql, db);
-            request.CommandType = System.Data.CommandType.Text;
-            sqlReader = await request.ExecuteReaderAsync();
-
-            while (await sqlReader.ReadAsync())
-            {
-                decisions.Add(new(int.Parse(sqlReader["DEC_ID"].ToString()), sqlReader["libelleDecision"].ToString()));
-            }
-
-            //Utilisateurs
-            sql = "SELECT id, nom, password FROM UTILISATEUR";
-            request = new SqlCommand(sql, db);
-            request.CommandType = System.Data.CommandType.Text;
-            sqlReader = await request.ExecuteReaderAsync();
-
-            while (await sqlReader.ReadAsync())
-            {
-                utilisateurs.Add(new(int.Parse(sqlReader["id"].ToString()), sqlReader["nom"].ToString(), sqlReader["password"].ToString()));
-            }
-
-            //Récupérer les workflows des médicaments
-            sql = "SELECT WOR_ETA_NUM, WOR_DEC_ID, WOR_MED_DEPOTLEGAL, WOR_DATE_DECISION from workflow";
-            request = new SqlCommand(sql, db);
-            request.CommandType = System.Data.CommandType.Text;
-            sqlReader = await request.ExecuteReaderAsync();
-
             try
             {
+
+                familles = new Dictionary<string, Famille>();
+                medicaments = new Dictionary<string, Medicament>();
+                etapes = new List<Etape>();
+                decisions = new List<Decision>();
+                utilisateurs = new List<Utilisateur>();
+
+                //FAMILLES
+                SqlCommand request = new SqlCommand("prc_liste_familles", db);
+                request.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataReader sqlReader = await request.ExecuteReaderAsync();
+
                 while (await sqlReader.ReadAsync())
                 {
-                    Medicament medicament = medicaments[sqlReader["WOR_MED_DEPOTLEGAL"].ToString()];
-                    medicament.AjouterEtape(new(
-                        DateOnly.FromDateTime(DateTime.Parse(sqlReader["WOR_DATE_DECISION"].ToString())),
-                        int.Parse(sqlReader["WOR_ETA_NUM"].ToString()),
-                        int.Parse(sqlReader["WOR_DEC_ID"].ToString())
-                    ));
+                    Famille famille = new(sqlReader["code"].ToString(), sqlReader["libelle"].ToString(), int.Parse(sqlReader["nbMediAmm"].ToString()));
+                    familles.Add(famille.getCode(), famille);
                 }
+
+                //MEDICAMENTS
+                request = new SqlCommand("prc_liste_medicaments", db);
+                request.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlReader = await request.ExecuteReaderAsync();
+
+
+                while (await sqlReader.ReadAsync())
+                {
+                    float prixEchantillon;
+                    bool prixEchantillonExiste = float.TryParse(sqlReader["prixEchantillon"].ToString(), out prixEchantillon);
+                    Medicament medicament = new(sqlReader["depotLegal"].ToString(), sqlReader["nomCommercial"].ToString(), sqlReader["composition"].ToString(), sqlReader["effets"].ToString(), sqlReader["contreIndications"].ToString(), prixEchantillonExiste ? prixEchantillon : null, sqlReader["amm"].ToString(), int.Parse(sqlReader["derniereEtape"].ToString()), sqlReader["codeFamille"].ToString());
+                    medicaments.Add(medicament.getDepotLegal(), medicament);
+                }
+
+                //Etapes
+                string sql = "SELECT ETA_NUM, ETA_LIBELLE from etape";
+                request = new SqlCommand(sql, db);
+                request.CommandType = System.Data.CommandType.Text;
+                sqlReader = await request.ExecuteReaderAsync();
+
+                while (await sqlReader.ReadAsync())
+                {
+                    etapes.Add(new(int.Parse(sqlReader["ETA_NUM"].ToString()), sqlReader["ETA_LIBELLE"].ToString()));
+                }
+
+                //Decisions
+                sql = "SELECT DEC_ID, libelleDecision from decision";
+                request = new SqlCommand(sql, db);
+                request.CommandType = System.Data.CommandType.Text;
+                sqlReader = await request.ExecuteReaderAsync();
+
+                while (await sqlReader.ReadAsync())
+                {
+                    decisions.Add(new(int.Parse(sqlReader["DEC_ID"].ToString()), sqlReader["libelleDecision"].ToString()));
+                }
+
+                //Utilisateurs
+                sql = "SELECT id, nom, password FROM UTILISATEUR";
+                request = new SqlCommand(sql, db);
+                request.CommandType = System.Data.CommandType.Text;
+                sqlReader = await request.ExecuteReaderAsync();
+
+                while (await sqlReader.ReadAsync())
+                {
+                    utilisateurs.Add(new(int.Parse(sqlReader["id"].ToString()), sqlReader["nom"].ToString(), sqlReader["password"].ToString()));
+                }
+
+                //Récupérer les workflows des médicaments
+                sql = "SELECT WOR_ETA_NUM, WOR_DEC_ID, WOR_MED_DEPOTLEGAL, WOR_DATE_DECISION from workflow";
+                request = new SqlCommand(sql, db);
+                request.CommandType = System.Data.CommandType.Text;
+                sqlReader = await request.ExecuteReaderAsync();
+
+                try
+                {
+                    while (await sqlReader.ReadAsync())
+                    {
+                        Medicament medicament = medicaments[sqlReader["WOR_MED_DEPOTLEGAL"].ToString()];
+                        medicament.AjouterEtape(new(
+                            DateOnly.FromDateTime(DateTime.Parse(sqlReader["WOR_DATE_DECISION"].ToString())),
+                            int.Parse(sqlReader["WOR_ETA_NUM"].ToString()),
+                            int.Parse(sqlReader["WOR_DEC_ID"].ToString())
+                        ));
+                    }
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
         public static void ReloadData(bool displayResult = false)

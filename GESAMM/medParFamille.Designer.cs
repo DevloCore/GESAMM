@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             lv_familles = new ListView();
             codeFamille = new ColumnHeader();
             designationFamille = new ColumnHeader();
@@ -41,22 +40,16 @@
             contreIndication = new ColumnHeader();
             prixEchantillon = new ColumnHeader();
             amm = new ColumnHeader();
-            label2 = new Label();
+            gb_liste_famille_medicament = new GroupBox();
+            gb_medic_par_famille = new GroupBox();
+            gb_liste_famille_medicament.SuspendLayout();
+            gb_medic_par_famille.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(44, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(125, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Liste des familles:";
             // 
             // lv_familles
             // 
             lv_familles.Columns.AddRange(new ColumnHeader[] { codeFamille, designationFamille, nbMedicAutorise });
-            lv_familles.Location = new Point(44, 89);
+            lv_familles.Location = new Point(4, 29);
             lv_familles.Name = "lv_familles";
             lv_familles.Size = new Size(444, 399);
             lv_familles.TabIndex = 1;
@@ -82,7 +75,7 @@
             // lv_medic
             // 
             lv_medic.Columns.AddRange(new ColumnHeader[] { depotLegal, nomCommercial, composition, effets, contreIndication, prixEchantillon, amm });
-            lv_medic.Location = new Point(602, 89);
+            lv_medic.Location = new Point(6, 29);
             lv_medic.Name = "lv_medic";
             lv_medic.Size = new Size(444, 399);
             lv_medic.TabIndex = 2;
@@ -124,33 +117,44 @@
             amm.Text = "Autorisation de mise sur le marché";
             amm.Width = 241;
             // 
-            // label2
+            // gb_liste_famille_medicament
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(602, 41);
-            label2.Name = "label2";
-            label2.Size = new Size(272, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Médicaments de la famille sélectionnée";
+            gb_liste_famille_medicament.BackColor = SystemColors.Control;
+            gb_liste_famille_medicament.Controls.Add(lv_familles);
+            gb_liste_famille_medicament.Location = new Point(40, 60);
+            gb_liste_famille_medicament.Name = "gb_liste_famille_medicament";
+            gb_liste_famille_medicament.Size = new Size(453, 434);
+            gb_liste_famille_medicament.TabIndex = 4;
+            gb_liste_famille_medicament.TabStop = false;
+            gb_liste_famille_medicament.Text = "Liste des familles:";
+            // 
+            // gb_medic_par_famille
+            // 
+            gb_medic_par_famille.BackColor = SystemColors.Control;
+            gb_medic_par_famille.Controls.Add(lv_medic);
+            gb_medic_par_famille.Location = new Point(602, 60);
+            gb_medic_par_famille.Name = "gb_medic_par_famille";
+            gb_medic_par_famille.Size = new Size(453, 434);
+            gb_medic_par_famille.TabIndex = 5;
+            gb_medic_par_famille.TabStop = false;
+            gb_medic_par_famille.Text = "Médicaments de la famille sélectionnée";
             // 
             // medParFamille
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Highlight;
             ClientSize = new Size(1143, 537);
-            Controls.Add(label2);
-            Controls.Add(lv_medic);
-            Controls.Add(lv_familles);
-            Controls.Add(label1);
+            Controls.Add(gb_medic_par_famille);
+            Controls.Add(gb_liste_famille_medicament);
             Name = "medParFamille";
             Text = "Nombre de médicament par famille";
+            gb_liste_famille_medicament.ResumeLayout(false);
+            gb_medic_par_famille.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private ListView lv_familles;
         private ColumnHeader codeFamille;
         private ColumnHeader designationFamille;
@@ -163,6 +167,7 @@
         private ColumnHeader contreIndication;
         private ColumnHeader prixEchantillon;
         private ColumnHeader amm;
-        private Label label2;
+        private GroupBox gb_liste_famille_medicament;
+        private GroupBox gb_medic_par_famille;
     }
 }

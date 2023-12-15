@@ -75,7 +75,7 @@ namespace GESAMM
         {
             try
             {
-                if (med_nomCommercial != null && fam_code != null && med_depotLegal != null && med_composition != null && med_effets != null && med_contreIndications != null && med_prixEchantillon != null && med_amm != null)
+                if (med_nomCommercial != null || fam_code != null || med_depotLegal != null || med_composition != null || med_effets != null || med_contreIndications != null || med_prixEchantillon != null || med_amm != null)
                 {
                     SqlCommand maRequete = new SqlCommand("dbo.prc_ajout_medicament", Global.db);
                     maRequete.CommandType = System.Data.CommandType.StoredProcedure;
