@@ -25,7 +25,6 @@ namespace GESAMM
             medicaments = new Dictionary<string, Medicament>();
             etapes = new List<Etape>();
             decisions = new List<Decision>();
-            utilisateurs = new List<Utilisateur>();
 
             SqlConnectionStringBuilder builder = new()
             {
@@ -47,15 +46,20 @@ namespace GESAMM
                 await LoadFirstData();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message, "Impossible de se connecter à la base de données");
                 return false;
             }
         }
 
-        public static async Task LoadFirstData()
+        private static async Task LoadFirstData()
         {
+            familles = new Dictionary<string, Famille>();
+            medicaments = new Dictionary<string, Medicament>();
+            etapes = new List<Etape>();
+            decisions = new List<Decision>();
+
             //FAMILLES
             SqlCommand request = new SqlCommand("prc_liste_familles", db);
             request.CommandType = System.Data.CommandType.StoredProcedure;
@@ -83,7 +87,7 @@ namespace GESAMM
 
             //Etapes
             string sql = "SELECT ETA_NUM, ETA_LIBELLE from etape";
-            request = new SqlCommand (sql, db);
+            request = new SqlCommand(sql, db);
             request.CommandType = System.Data.CommandType.Text;
             sqlReader = await request.ExecuteReaderAsync();
 
@@ -133,6 +137,14 @@ namespace GESAMM
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        public static void ReloadData(bool displayResult = false)
+        {
+            var request = LoadFirstData().ContinueWith(x =>
+            {
+                if (displayResult) MessageBox.Show("Rechargement terminé");
+            });
         }
     }
 }
