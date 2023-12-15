@@ -31,17 +31,6 @@ namespace GESAMM
             listeMedicaments.MdiParent = this;
             listeMedicaments.Show();
         }
-        private AjoutMedicament AjoutMedicament;
-
-        private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (AjoutMedicament == null || AjoutMedicament.IsDisposed)
-
-                AjoutMedicament = new AjoutMedicament();
-            AjoutMedicament.MdiParent = this;
-            AjoutMedicament.Show();
-
-        }
 
         private DecisionEtape decisionEtape;
 
@@ -58,13 +47,24 @@ namespace GESAMM
 
         private medParFamille medParFamille;
 
-        private void nombreDeMédicamentParFamilleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nombreDeMédicamentParFamilleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (medParFamille == null || medParFamille.IsDisposed)
 
                 medParFamille = new medParFamille();
             medParFamille.MdiParent = this;
             medParFamille.Show();
+        }
+
+
+        private AjoutMedicament AjoutMedicament;
+        private void ajouterToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (AjoutMedicament == null || AjoutMedicament.IsDisposed)
+
+                AjoutMedicament = new AjoutMedicament();
+            AjoutMedicament.MdiParent = this;
+            AjoutMedicament.Show();
         }
     }
 }
