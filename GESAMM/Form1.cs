@@ -15,11 +15,12 @@ namespace GESAMM
 
         private void NextState()
         {
-            bool enable = connectedAndLoaded && getUsernameInput() != "";
+            bool enable = connectedAndLoaded && getUsernameInput() != "" && getPasswordInput() != "";
             buttonLogin.Enabled = enable;
         }
 
         private string getUsernameInput() { return tb_username.Text.Trim(); }
+        private string getPasswordInput() { return tb_password.Text.Trim(); }
 
         private bool connectedAndLoaded = false;
 
@@ -54,9 +55,14 @@ namespace GESAMM
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Global.username = getUsernameInput();
-            new Menu().Show(this);
-            Hide();
+            //Global.username = getUsernameInput();
+            //new Menu().Show(this);
+            //Hide();
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+            NextState();
         }
     }
 }
