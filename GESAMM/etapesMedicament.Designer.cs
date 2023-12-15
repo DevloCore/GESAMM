@@ -108,6 +108,7 @@
             Controls.Add(lvEtapes);
             Name = "etapesMedicament";
             Text = "etapesMedicament";
+            WindowState = FormWindowState.Maximized;
             Load += etapesMedicament_Load;
             ResumeLayout(false);
             PerformLayout();

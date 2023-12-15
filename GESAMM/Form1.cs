@@ -40,7 +40,7 @@ namespace GESAMM
             {
                 barConnectingDb.Style = ProgressBarStyle.Continuous;
                 var msgBox = MessageBox.Show("Impossible de se connecter à la base de données ou erreur lors du chargement de celle-ci.", "Erreur", MessageBoxButtons.RetryCancel);
-                if(msgBox == DialogResult.Retry)
+                if (msgBox == DialogResult.Retry)
                 {
                     Starting();
                 }
@@ -55,9 +55,16 @@ namespace GESAMM
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            //Global.username = getUsernameInput();
-            //new Menu().Show(this);
-            //Hide();
+            foreach (Utilisateur unUtil in Global.utilisateurs)
+            {
+                if(unUtil.getNom() == tb_username.Text && unUtil.getPassword() == tb_password.Text)
+                {
+                    new Menu().Show(this);
+                    Hide();
+                    return;
+                }
+            }
+            MessageBox.Show("Le nom ou le mot de passe saisi n'est pas correct.");
         }
 
         private void tb_password_TextChanged(object sender, EventArgs e)

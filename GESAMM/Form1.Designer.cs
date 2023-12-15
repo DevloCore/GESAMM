@@ -1,4 +1,4 @@
-﻿namespace GESAMM
+namespace GESAMM
 {
     partial class Form1
     {
@@ -28,100 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barConnectingDb = new System.Windows.Forms.ProgressBar();
-            this.labelConnecting = new System.Windows.Forms.Label();
-            this.tb_username = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tb_password = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // barConnectingDb
-            // 
-            this.barConnectingDb.Location = new System.Drawing.Point(266, 377);
-            this.barConnectingDb.MarqueeAnimationSpeed = 30;
-            this.barConnectingDb.Name = "barConnectingDb";
-            this.barConnectingDb.Size = new System.Drawing.Size(277, 29);
-            this.barConnectingDb.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.barConnectingDb.TabIndex = 0;
-            // 
-            // labelConnecting
-            // 
-            this.labelConnecting.AutoSize = true;
-            this.labelConnecting.Location = new System.Drawing.Point(288, 354);
-            this.labelConnecting.Name = "labelConnecting";
-            this.labelConnecting.Size = new System.Drawing.Size(232, 20);
-            this.labelConnecting.TabIndex = 1;
-            this.labelConnecting.Text = "Connexion à la base de données...";
-            // 
-            // tb_username
-            // 
-            this.tb_username.Location = new System.Drawing.Point(373, 171);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(209, 27);
-            this.tb_username.TabIndex = 2;
-            this.tb_username.TextChanged += new System.EventHandler(this.tb_username_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(244, 174);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nom d\'utilisateur";
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLogin.Location = new System.Drawing.Point(244, 239);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(338, 36);
-            this.buttonLogin.TabIndex = 4;
-            this.buttonLogin.Text = "Poursuivre";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(266, 209);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Mot de passe";
+            tb_password = new TextBox();
+            label1 = new Label();
+            buttonLogin = new Button();
+            label2 = new Label();
+            tb_username = new TextBox();
+            labelConnecting = new Label();
+            barConnectingDb = new ProgressBar();
+            SuspendLayout();
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(373, 206);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(209, 27);
-            this.tb_password.TabIndex = 5;
-            this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
+            tb_password.Location = new Point(285, 137);
+            tb_password.Margin = new Padding(3, 2, 3, 2);
+            tb_password.Name = "tb_password";
+            tb_password.Size = new Size(161, 23);
+            tb_password.TabIndex = 5;
+            tb_password.TextChanged += tb_password_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(173, 140);
+            label1.Name = "label1";
+            label1.Size = new Size(77, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Mot de passe";
+            // 
+            // buttonLogin
+            // 
+            buttonLogin.BackColor = Color.DodgerBlue;
+            buttonLogin.FlatStyle = FlatStyle.Flat;
+            buttonLogin.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLogin.ForeColor = SystemColors.Control;
+            buttonLogin.Location = new Point(173, 171);
+            buttonLogin.Margin = new Padding(3, 2, 3, 2);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(296, 27);
+            buttonLogin.TabIndex = 4;
+            buttonLogin.Text = "Poursuivre";
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(170, 99);
+            label2.Name = "label2";
+            label2.Size = new Size(99, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Nom d'utilisateur";
+            // 
+            // tb_username
+            // 
+            tb_username.Location = new Point(285, 96);
+            tb_username.Margin = new Padding(3, 2, 3, 2);
+            tb_username.Name = "tb_username";
+            tb_username.Size = new Size(161, 23);
+            tb_username.TabIndex = 2;
+            tb_username.TextChanged += tb_username_TextChanged;
+            // 
+            // labelConnecting
+            // 
+            labelConnecting.AutoSize = true;
+            labelConnecting.Location = new Point(220, 200);
+            labelConnecting.Name = "labelConnecting";
+            labelConnecting.Size = new Size(186, 15);
+            labelConnecting.TabIndex = 1;
+            labelConnecting.Text = "Connexion à la base de données...";
+            // 
+            // barConnectingDb
+            // 
+            barConnectingDb.Location = new Point(204, 212);
+            barConnectingDb.Margin = new Padding(3, 2, 3, 2);
+            barConnectingDb.MarqueeAnimationSpeed = 30;
+            barConnectingDb.Name = "barConnectingDb";
+            barConnectingDb.Size = new Size(212, 16);
+            barConnectingDb.Style = ProgressBarStyle.Marquee;
+            barConnectingDb.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_password);
-            this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_username);
-            this.Controls.Add(this.labelConnecting);
-            this.Controls.Add(this.barConnectingDb);
-            this.Name = "Form1";
-            this.Text = "Connexion";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(700, 338);
+            Controls.Add(label1);
+            Controls.Add(tb_password);
+            Controls.Add(buttonLogin);
+            Controls.Add(label2);
+            Controls.Add(tb_username);
+            Controls.Add(labelConnecting);
+            Controls.Add(barConnectingDb);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Form1";
+            Text = "Connexion";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

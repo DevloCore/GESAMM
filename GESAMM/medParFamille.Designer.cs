@@ -1,4 +1,4 @@
-﻿namespace GESAMM
+namespace GESAMM
 {
     partial class medParFamille
     {
@@ -51,7 +51,7 @@
             lv_familles.Columns.AddRange(new ColumnHeader[] { codeFamille, designationFamille, nbMedicAutorise });
             lv_familles.Location = new Point(4, 29);
             lv_familles.Name = "lv_familles";
-            lv_familles.Size = new Size(444, 399);
+            lv_familles.Size = new Size(389, 300);
             lv_familles.TabIndex = 1;
             lv_familles.UseCompatibleStateImageBehavior = false;
             lv_familles.View = View.Details;
@@ -77,7 +77,7 @@
             lv_medic.Columns.AddRange(new ColumnHeader[] { depotLegal, nomCommercial, composition, effets, contreIndication, prixEchantillon, amm });
             lv_medic.Location = new Point(6, 29);
             lv_medic.Name = "lv_medic";
-            lv_medic.Size = new Size(444, 399);
+            lv_medic.Size = new Size(389, 300);
             lv_medic.TabIndex = 2;
             lv_medic.UseCompatibleStateImageBehavior = false;
             lv_medic.View = View.Details;
@@ -141,7 +141,7 @@
             // 
             // medParFamille
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Highlight;
             ClientSize = new Size(1143, 537);

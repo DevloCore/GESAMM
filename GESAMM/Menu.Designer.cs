@@ -36,10 +36,10 @@ namespace GESAMM
             decisionEtapeToolStripMenuItem2 = new ToolStripMenuItem();
             familleDeMédicamentToolStripMenuItem = new ToolStripMenuItem();
             nombreDeMédicamentParFamilleToolStripMenuItem1 = new ToolStripMenuItem();
-            familleToolStripMenuItem = new ToolStripMenuItem();
-            nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
             workflowToolStripMenuItem2 = new ToolStripMenuItem();
+            familleToolStripMenuItem = new ToolStripMenuItem();
+            nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,14 +53,14 @@ namespace GESAMM
             // consulterToolStripMenuItem
             // 
             consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
-            consulterToolStripMenuItem.Size = new Size(180, 22);
+            consulterToolStripMenuItem.Size = new Size(125, 22);
             consulterToolStripMenuItem.Text = "Consulter";
             consulterToolStripMenuItem.Click += consulterToolStripMenuItem_Click;
             // 
             // ajouterToolStripMenuItem
             // 
             ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            ajouterToolStripMenuItem.Size = new Size(180, 22);
+            ajouterToolStripMenuItem.Size = new Size(125, 22);
             ajouterToolStripMenuItem.Text = "Ajouter";
             ajouterToolStripMenuItem.Click += ajouterToolStripMenuItem_Click_1;
             // 
@@ -85,7 +85,7 @@ namespace GESAMM
             // decisionEtapeToolStripMenuItem2
             // 
             decisionEtapeToolStripMenuItem2.Name = "decisionEtapeToolStripMenuItem2";
-            decisionEtapeToolStripMenuItem2.Size = new Size(180, 22);
+            decisionEtapeToolStripMenuItem2.Size = new Size(103, 22);
             decisionEtapeToolStripMenuItem2.Text = "Etape";
             decisionEtapeToolStripMenuItem2.Click += decisionEtapeToolStripMenuItem2_Click;
             // 
@@ -103,19 +103,6 @@ namespace GESAMM
             nombreDeMédicamentParFamilleToolStripMenuItem1.Text = "Nombre de médicament par famille";
             nombreDeMédicamentParFamilleToolStripMenuItem1.Click += nombreDeMédicamentParFamilleToolStripMenuItem1_Click;
             // 
-            // familleToolStripMenuItem
-            // 
-            familleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nombreDeMédicamentParFamilleToolStripMenuItem });
-            familleToolStripMenuItem.Name = "familleToolStripMenuItem";
-            familleToolStripMenuItem.Size = new Size(178, 24);
-            familleToolStripMenuItem.Text = "Famille de médicament";
-            // 
-            // nombreDeMédicamentParFamilleToolStripMenuItem
-            // 
-            nombreDeMédicamentParFamilleToolStripMenuItem.Name = "nombreDeMédicamentParFamilleToolStripMenuItem";
-            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(263, 22);
-            nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
-            // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { workflowToolStripMenuItem2 });
@@ -129,6 +116,19 @@ namespace GESAMM
             workflowToolStripMenuItem2.Size = new Size(205, 22);
             workflowToolStripMenuItem2.Text = "Etapes d'un médicament";
             workflowToolStripMenuItem2.Click += workflowToolStripMenuItem2_Click;
+            // 
+            // familleToolStripMenuItem
+            // 
+            familleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nombreDeMédicamentParFamilleToolStripMenuItem });
+            familleToolStripMenuItem.Name = "familleToolStripMenuItem";
+            familleToolStripMenuItem.Size = new Size(178, 24);
+            familleToolStripMenuItem.Text = "Famille de médicament";
+            // 
+            // nombreDeMédicamentParFamilleToolStripMenuItem
+            // 
+            nombreDeMédicamentParFamilleToolStripMenuItem.Name = "nombreDeMédicamentParFamilleToolStripMenuItem";
+            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(263, 22);
+            nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
             // 
             // Menu
             // 
