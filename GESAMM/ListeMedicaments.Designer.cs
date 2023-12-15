@@ -28,114 +28,108 @@ namespace GESAMM
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            this.cb_enValid = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.listMedicaments = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            // 
-            // listMedicaments
-            // 
-            this.listMedicaments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listMedicaments.FullRowSelect = true;
-            this.listMedicaments.Location = new System.Drawing.Point(12, 92);
-            this.listMedicaments.MultiSelect = false;
-            this.listMedicaments.Name = "listMedicaments";
-            this.listMedicaments.Size = new System.Drawing.Size(1238, 534);
-            this.listMedicaments.TabIndex = 0;
-            this.listMedicaments.UseCompatibleStateImageBehavior = false;
-            this.listMedicaments.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Dépôt légal";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nom commercial";
-            this.columnHeader2.Width = 160;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Famille";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Composition";
-            this.columnHeader4.Width = 160;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Effets";
-            this.columnHeader5.Width = 160;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Contre indications";
-            this.columnHeader6.Width = 160;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Prix échantillon";
-            this.columnHeader7.Width = 120;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "AMM";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(170, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Liste des médicamens";
+            cb_enValid = new CheckBox();
+            label1 = new Label();
+            columnHeader8 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            listMedicaments = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            SuspendLayout();
             // 
             // cb_enValid
             // 
-            this.cb_enValid.AutoSize = true;
-            this.cb_enValid.Location = new System.Drawing.Point(526, 42);
-            this.cb_enValid.Name = "cb_enValid";
-            this.cb_enValid.Size = new System.Drawing.Size(177, 24);
-            this.cb_enValid.TabIndex = 2;
-            this.cb_enValid.Text = "En cours de validation";
-            this.cb_enValid.UseVisualStyleBackColor = true;
-            this.cb_enValid.CheckedChanged += new System.EventHandler(this.cb_enValid_CheckedChanged);
+            cb_enValid.AutoSize = true;
+            cb_enValid.Location = new Point(460, 32);
+            cb_enValid.Margin = new Padding(3, 2, 3, 2);
+            cb_enValid.Name = "cb_enValid";
+            cb_enValid.Size = new Size(142, 19);
+            cb_enValid.TabIndex = 2;
+            cb_enValid.Text = "En cours de validation";
+            cb_enValid.UseVisualStyleBackColor = true;
+            cb_enValid.CheckedChanged += cb_enValid_CheckedChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(149, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(260, 32);
+            label1.TabIndex = 1;
+            label1.Text = "Liste des médicaments";
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "AMM";
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Contre indications";
+            columnHeader6.Width = 160;
+            // 
+            // listMedicaments
+            // 
+            listMedicaments.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
+            listMedicaments.FullRowSelect = true;
+            listMedicaments.Location = new Point(10, 69);
+            listMedicaments.Margin = new Padding(3, 2, 3, 2);
+            listMedicaments.MultiSelect = false;
+            listMedicaments.Name = "listMedicaments";
+            listMedicaments.Size = new Size(1084, 402);
+            listMedicaments.TabIndex = 0;
+            listMedicaments.UseCompatibleStateImageBehavior = false;
+            listMedicaments.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Dépôt légal";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Nom commercial";
+            columnHeader2.Width = 160;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Famille";
+            columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Composition";
+            columnHeader4.Width = 160;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Effets";
+            columnHeader5.Width = 160;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Prix échantillon";
+            columnHeader7.Width = 120;
             // 
             // ListeMedicaments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.cb_enValid);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listMedicaments);
-            this.Name = "ListeMedicaments";
-            this.Text = "Liste Medicaments";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ListeMedicaments_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1104, 505);
+            Controls.Add(cb_enValid);
+            Controls.Add(label1);
+            Controls.Add(listMedicaments);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "ListeMedicaments";
+            Text = "Liste Medicaments";
+            WindowState = FormWindowState.Maximized;
+            Load += ListeMedicaments_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
