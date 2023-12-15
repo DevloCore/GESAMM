@@ -52,6 +52,7 @@
             // 
             // gb_formulaire_ajout_medic
             // 
+            gb_formulaire_ajout_medic.BackColor = SystemColors.Control;
             gb_formulaire_ajout_medic.Controls.Add(cb_famille_medicament);
             gb_formulaire_ajout_medic.Controls.Add(nud_prix_echantillon_medicament);
             gb_formulaire_ajout_medic.Controls.Add(tb_depot_legal_medicament);
@@ -228,6 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Highlight;
             ClientSize = new Size(904, 540);
             Controls.Add(gb_formulaire_ajout_medic);
             Name = "AjoutMedicament";
