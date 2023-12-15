@@ -196,6 +196,7 @@ namespace GESAMM
 
             command.ExecuteNonQuery();
 
+
             MessageBox.Show("Décision enregistrée.");
             if(decId == 2)
             {
