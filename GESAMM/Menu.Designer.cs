@@ -38,6 +38,8 @@ namespace GESAMM
             nombreDeMédicamentParFamilleToolStripMenuItem1 = new ToolStripMenuItem();
             familleToolStripMenuItem = new ToolStripMenuItem();
             nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            workflowToolStripMenuItem2 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,31 +47,31 @@ namespace GESAMM
             // 
             médicamentsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consulterToolStripMenuItem, ajouterToolStripMenuItem });
             médicamentsToolStripMenuItem.Name = "médicamentsToolStripMenuItem";
-            médicamentsToolStripMenuItem.Size = new Size(112, 24);
+            médicamentsToolStripMenuItem.Size = new Size(91, 20);
             médicamentsToolStripMenuItem.Text = "Médicaments";
             // 
             // consulterToolStripMenuItem
             // 
             consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
-            consulterToolStripMenuItem.Size = new Size(224, 26);
+            consulterToolStripMenuItem.Size = new Size(180, 22);
             consulterToolStripMenuItem.Text = "Consulter";
             consulterToolStripMenuItem.Click += consulterToolStripMenuItem_Click;
             // 
             // ajouterToolStripMenuItem
             // 
             ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            ajouterToolStripMenuItem.Size = new Size(224, 26);
+            ajouterToolStripMenuItem.Size = new Size(180, 22);
             ajouterToolStripMenuItem.Text = "Ajouter";
             ajouterToolStripMenuItem.Click += ajouterToolStripMenuItem_Click_1;
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { médicamentsToolStripMenuItem, decisionToolStripMenuItem1, familleDeMédicamentToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { médicamentsToolStripMenuItem, decisionToolStripMenuItem1, familleDeMédicamentToolStripMenuItem, toolStripMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(1262, 30);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1104, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -77,13 +79,13 @@ namespace GESAMM
             // 
             decisionToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { decisionEtapeToolStripMenuItem2 });
             decisionToolStripMenuItem1.Name = "decisionToolStripMenuItem1";
-            decisionToolStripMenuItem1.Size = new Size(80, 24);
+            decisionToolStripMenuItem1.Size = new Size(64, 20);
             decisionToolStripMenuItem1.Text = "Décision";
             // 
             // decisionEtapeToolStripMenuItem2
             // 
             decisionEtapeToolStripMenuItem2.Name = "decisionEtapeToolStripMenuItem2";
-            decisionEtapeToolStripMenuItem2.Size = new Size(130, 26);
+            decisionEtapeToolStripMenuItem2.Size = new Size(180, 22);
             decisionEtapeToolStripMenuItem2.Text = "Etape";
             decisionEtapeToolStripMenuItem2.Click += decisionEtapeToolStripMenuItem2_Click;
             // 
@@ -91,13 +93,13 @@ namespace GESAMM
             // 
             familleDeMédicamentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nombreDeMédicamentParFamilleToolStripMenuItem1 });
             familleDeMédicamentToolStripMenuItem.Name = "familleDeMédicamentToolStripMenuItem";
-            familleDeMédicamentToolStripMenuItem.Size = new Size(178, 24);
+            familleDeMédicamentToolStripMenuItem.Size = new Size(143, 20);
             familleDeMédicamentToolStripMenuItem.Text = "Famille de médicament";
             // 
             // nombreDeMédicamentParFamilleToolStripMenuItem1
             // 
             nombreDeMédicamentParFamilleToolStripMenuItem1.Name = "nombreDeMédicamentParFamilleToolStripMenuItem1";
-            nombreDeMédicamentParFamilleToolStripMenuItem1.Size = new Size(331, 26);
+            nombreDeMédicamentParFamilleToolStripMenuItem1.Size = new Size(263, 22);
             nombreDeMédicamentParFamilleToolStripMenuItem1.Text = "Nombre de médicament par famille";
             nombreDeMédicamentParFamilleToolStripMenuItem1.Click += nombreDeMédicamentParFamilleToolStripMenuItem1_Click;
             // 
@@ -111,17 +113,32 @@ namespace GESAMM
             // nombreDeMédicamentParFamilleToolStripMenuItem
             // 
             nombreDeMédicamentParFamilleToolStripMenuItem.Name = "nombreDeMédicamentParFamilleToolStripMenuItem";
-            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(331, 26);
+            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(263, 22);
             nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { workflowToolStripMenuItem2 });
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(75, 20);
+            toolStripMenuItem1.Text = "Workflows";
+            // 
+            // workflowToolStripMenuItem2
+            // 
+            workflowToolStripMenuItem2.Name = "workflowToolStripMenuItem2";
+            workflowToolStripMenuItem2.Size = new Size(205, 22);
+            workflowToolStripMenuItem2.Text = "Etapes d'un médicament";
+            workflowToolStripMenuItem2.Click += workflowToolStripMenuItem2_Click;
             // 
             // Menu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1104, 505);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Menu";
             Text = "Menu";
             Load += Menu_Load;
@@ -143,5 +160,7 @@ namespace GESAMM
         private ToolStripMenuItem nombreDeMédicamentParFamilleToolStripMenuItem;
         private ToolStripMenuItem familleDeMédicamentToolStripMenuItem;
         private ToolStripMenuItem nombreDeMédicamentParFamilleToolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem workflowToolStripMenuItem2;
     }
 }

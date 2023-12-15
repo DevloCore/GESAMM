@@ -66,5 +66,15 @@ namespace GESAMM
             AjoutMedicament.MdiParent = this;
             AjoutMedicament.Show();
         }
+
+        private etapesMedicament etapesMedicament;
+        private void workflowToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (etapesMedicament == null || etapesMedicament.IsDisposed)
+
+                etapesMedicament = new etapesMedicament();
+            etapesMedicament.MdiParent = this;
+            etapesMedicament.Show();
+        }
     }
 }
