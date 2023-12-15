@@ -17,6 +17,7 @@ namespace GESAMM
         public static Dictionary<string, Medicament> medicaments;
         public static List<Etape> etapes;
         public static List<Decision> decisions;
+        public static List<Utilisateur> utilisateurs;
 
         public static async Task<bool> Init()
         {
@@ -24,6 +25,7 @@ namespace GESAMM
             medicaments = new Dictionary<string, Medicament>();
             etapes = new List<Etape>();
             decisions = new List<Decision>();
+            utilisateurs = new List<Utilisateur>();
 
             SqlConnectionStringBuilder builder = new()
             {
@@ -99,6 +101,17 @@ namespace GESAMM
             while (await sqlReader.ReadAsync())
             {
                 decisions.Add(new(int.Parse(sqlReader["DEC_ID"].ToString()), sqlReader["libelleDecision"].ToString()));
+            }
+
+            //Utilisateurs
+            sql = "SELECT id, nom, password FROM UTILISATEUR";
+            request = new SqlCommand(sql, db);
+            request.CommandType = System.Data.CommandType.Text;
+            sqlReader = await request.ExecuteReaderAsync();
+
+            while (await sqlReader.ReadAsync())
+            {
+                utilisateurs.Add(new(int.Parse(sqlReader["id"].ToString()), sqlReader["nom"].ToString(), sqlReader["password"].ToString()));
             }
 
             //Récupérer les workflows des médicaments

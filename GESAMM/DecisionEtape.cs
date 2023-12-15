@@ -90,7 +90,7 @@ namespace GESAMM
                         int idx2 = idx + 1;
                         if (idx > -1)
                         {
-                            if (medoc.getEtapes()[idx2].getIdDecision() == 2)
+                            if (medoc.getEtapes()[idx].getIdDecision() == 2)
                             {
                                 MessageBox.Show("Il n'est plus possible de saisir d'étapes pour ce médicament car sa dernière étape a été refusée.");
                                 return;
