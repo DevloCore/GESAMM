@@ -33,6 +33,8 @@
             this.tb_username = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_password = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // barConnectingDb
@@ -76,7 +78,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLogin.Location = new System.Drawing.Point(244, 218);
+            this.buttonLogin.Location = new System.Drawing.Point(244, 239);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(338, 36);
             this.buttonLogin.TabIndex = 4;
@@ -84,12 +86,31 @@
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 209);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Mot de passe";
+            // 
+            // tb_password
+            // 
+            this.tb_password.Location = new System.Drawing.Point(373, 206);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(209, 27);
+            this.tb_password.TabIndex = 5;
+            this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_password);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_username);
@@ -110,5 +131,7 @@
         private TextBox tb_username;
         private Label label2;
         private Button buttonLogin;
+        private Label label1;
+        private TextBox tb_password;
     }
 }
