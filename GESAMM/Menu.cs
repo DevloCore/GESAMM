@@ -23,6 +23,7 @@ namespace GESAMM
         {
             if(lastForm != null) lastForm.Close();
 
+            lastForm = form;
             form.MdiParent = this;
             form.Show();
         }
