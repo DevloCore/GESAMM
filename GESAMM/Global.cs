@@ -59,6 +59,7 @@ namespace GESAMM
             medicaments = new Dictionary<string, Medicament>();
             etapes = new List<Etape>();
             decisions = new List<Decision>();
+            utilisateurs = new List<Utilisateur>();
 
             //FAMILLES
             SqlCommand request = new SqlCommand("prc_liste_familles", db);

@@ -17,64 +17,39 @@ namespace GESAMM
             InitializeComponent();
         }
 
+        private Form lastForm;
+
+        private void CustomOpen(Form form)
+        {
+            if(lastForm != null) lastForm.Close();
+
+            form.MdiParent = this;
+            form.Show();
+        }
+
         private void Menu_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenue " + Global.username);
+            //MessageBox.Show("Bienvenue " + Global.username);
         }
-
-        private ListeMedicaments listeMedicaments;
         private void consulterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (listeMedicaments == null || listeMedicaments.IsDisposed)
-                listeMedicaments = new ListeMedicaments();
-
-            listeMedicaments.MdiParent = this;
-            listeMedicaments.Show();
+            CustomOpen(new ListeMedicaments());
         }
-
-        private DecisionEtape decisionEtape;
-
         private void decisionEtapeToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (decisionEtape == null || decisionEtape.IsDisposed)
-            {
-                decisionEtape = new DecisionEtape();
-            }
-
-            decisionEtape.MdiParent = this;
-            decisionEtape.Show();
+            CustomOpen(new DecisionEtape());
         }
-
-        private medParFamille medParFamille;
-
         private void nombreDeMédicamentParFamilleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (medParFamille == null || medParFamille.IsDisposed)
-
-                medParFamille = new medParFamille();
-            medParFamille.MdiParent = this;
-            medParFamille.Show();
+            CustomOpen(new medParFamille());
         }
-
-
-        private AjoutMedicament AjoutMedicament;
         private void ajouterToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (AjoutMedicament == null || AjoutMedicament.IsDisposed)
-
-                AjoutMedicament = new AjoutMedicament();
-            AjoutMedicament.MdiParent = this;
-            AjoutMedicament.Show();
+            CustomOpen(new AjoutMedicament());
         }
-
-        private etapesMedicament etapesMedicament;
         private void workflowToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (etapesMedicament == null || etapesMedicament.IsDisposed)
-
-                etapesMedicament = new etapesMedicament();
-            etapesMedicament.MdiParent = this;
-            etapesMedicament.Show();
+            CustomOpen(new etapesMedicament());
         }
     }
 }
