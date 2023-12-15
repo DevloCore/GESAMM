@@ -52,5 +52,10 @@ namespace GESAMM
         {
             CustomOpen(new etapesMedicament());
         }
+
+        private void consulterToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

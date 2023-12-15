@@ -40,6 +40,8 @@ namespace GESAMM
             workflowToolStripMenuItem2 = new ToolStripMenuItem();
             familleToolStripMenuItem = new ToolStripMenuItem();
             nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
+            etapesToolStripMenuItem = new ToolStripMenuItem();
+            consulterToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +69,7 @@ namespace GESAMM
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { médicamentsToolStripMenuItem, decisionToolStripMenuItem1, familleDeMédicamentToolStripMenuItem, toolStripMenuItem1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { médicamentsToolStripMenuItem, decisionToolStripMenuItem1, familleDeMédicamentToolStripMenuItem, toolStripMenuItem1, etapesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
@@ -130,6 +132,20 @@ namespace GESAMM
             nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(331, 26);
             nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
             // 
+            // etapesToolStripMenuItem
+            // 
+            etapesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consulterToolStripMenuItem1 });
+            etapesToolStripMenuItem.Name = "etapesToolStripMenuItem";
+            etapesToolStripMenuItem.Size = new Size(67, 24);
+            etapesToolStripMenuItem.Text = "Etapes";
+            // 
+            // consulterToolStripMenuItem1
+            // 
+            consulterToolStripMenuItem1.Name = "consulterToolStripMenuItem1";
+            consulterToolStripMenuItem1.Size = new Size(224, 26);
+            consulterToolStripMenuItem1.Text = "Consulter";
+            consulterToolStripMenuItem1.Click += consulterToolStripMenuItem1_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -161,5 +177,7 @@ namespace GESAMM
         private ToolStripMenuItem nombreDeMédicamentParFamilleToolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem workflowToolStripMenuItem2;
+        private ToolStripMenuItem etapesToolStripMenuItem;
+        private ToolStripMenuItem consulterToolStripMenuItem1;
     }
 }
