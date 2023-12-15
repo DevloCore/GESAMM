@@ -70,13 +70,12 @@ namespace GESAMM
             request.CommandType = System.Data.CommandType.StoredProcedure;
             sqlReader = await request.ExecuteReaderAsync();
 
-            //la derniere etape est enregistrée sur le workflow ///!!!\\\
-            //    et surtout dans le constructeur on met 0 pour l'étape
+
             while (await sqlReader.ReadAsync())
             {
                 float prixEchantillon;
                 bool prixEchantillonExiste = float.TryParse(sqlReader["prixEchantillon"].ToString(), out prixEchantillon);
-                Medicament medicament = new(sqlReader["depotLegal"].ToString(), sqlReader["nomCommercial"].ToString(), sqlReader["composition"].ToString(), sqlReader["effets"].ToString(), sqlReader["contreIndications"].ToString(), prixEchantillonExiste ? prixEchantillon : null, sqlReader["amm"].ToString(), 0, sqlReader["codeFamille"].ToString());
+                Medicament medicament = new(sqlReader["depotLegal"].ToString(), sqlReader["nomCommercial"].ToString(), sqlReader["composition"].ToString(), sqlReader["effets"].ToString(), sqlReader["contreIndications"].ToString(), prixEchantillonExiste ? prixEchantillon : null, sqlReader["amm"].ToString(), int.Parse(sqlReader["derniereEtape"].ToString()), sqlReader["codeFamille"].ToString());
                 medicaments.Add(medicament.getDepotLegal(), medicament);
             }
 
