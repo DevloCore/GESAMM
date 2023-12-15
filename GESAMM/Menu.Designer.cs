@@ -34,6 +34,8 @@ namespace GESAMM
             menuStrip1 = new MenuStrip();
             decisionToolStripMenuItem1 = new ToolStripMenuItem();
             decisionEtapeToolStripMenuItem2 = new ToolStripMenuItem();
+            familleToolStripMenuItem = new ToolStripMenuItem();
+            nombreDeMédicamentParFamilleToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -82,6 +84,20 @@ namespace GESAMM
             decisionEtapeToolStripMenuItem2.Text = "Etape";
             decisionEtapeToolStripMenuItem2.Click += decisionEtapeToolStripMenuItem2_Click;
             // 
+            // familleToolStripMenuItem
+            // 
+            familleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nombreDeMédicamentParFamilleToolStripMenuItem });
+            familleToolStripMenuItem.Name = "familleToolStripMenuItem";
+            familleToolStripMenuItem.Size = new Size(178, 24);
+            familleToolStripMenuItem.Text = "Famille de médicament";
+            // 
+            // nombreDeMédicamentParFamilleToolStripMenuItem
+            // 
+            nombreDeMédicamentParFamilleToolStripMenuItem.Name = "nombreDeMédicamentParFamilleToolStripMenuItem";
+            nombreDeMédicamentParFamilleToolStripMenuItem.Size = new Size(331, 26);
+            nombreDeMédicamentParFamilleToolStripMenuItem.Text = "Nombre de médicament par famille";
+            nombreDeMédicamentParFamilleToolStripMenuItem.Click += nombreDeMédicamentParFamilleToolStripMenuItem_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -108,5 +124,7 @@ namespace GESAMM
         private MenuStrip menuStrip1;
         private ToolStripMenuItem decisionToolStripMenuItem1;
         private ToolStripMenuItem decisionEtapeToolStripMenuItem2;
+        private ToolStripMenuItem familleToolStripMenuItem;
+        private ToolStripMenuItem nombreDeMédicamentParFamilleToolStripMenuItem;
     }
 }
