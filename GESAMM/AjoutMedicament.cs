@@ -87,7 +87,7 @@ namespace GESAMM
                     maRequete.Parameters.AddWithValue("@med_contreIndications", tb_contre_indication_medicament.Text);
                     maRequete.Parameters.AddWithValue("@med_prixEchantillon", nud_prix_echantillon_medicament.Text);
                     maRequete.Parameters.AddWithValue("@med_amm", tb_AMM_medicament.Text);
-                    
+
                     int rowsAffected = maRequete.ExecuteNonQuery();
 
                     if (rowsAffected < 0)

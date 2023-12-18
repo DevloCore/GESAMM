@@ -149,6 +149,7 @@ namespace GESAMM
             Controls.Add(gb_liste_famille_medicament);
             Name = "medParFamille";
             Text = "Nombre de médicament par famille";
+            WindowState = FormWindowState.Maximized;
             gb_liste_famille_medicament.ResumeLayout(false);
             gb_medic_par_famille.ResumeLayout(false);
             ResumeLayout(false);

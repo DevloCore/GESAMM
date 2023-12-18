@@ -1,3 +1,6 @@
+using System.Text;
+using System.Security.Cryptography;
+
 namespace GESAMM
 {
     public partial class Form1 : Form
@@ -52,12 +55,11 @@ namespace GESAMM
         {
             NextState();
         }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             foreach (Utilisateur unUtil in Global.utilisateurs)
             {
-                if(unUtil.getNom() == tb_username.Text && unUtil.getPassword() == tb_password.Text)
+                if (unUtil.getNom() == tb_username.Text && unUtil.getPassword() == tb_password.Text)
                 {
                     Global.userId = unUtil.getId();
                     new Menu().Show(this);
