@@ -101,6 +101,8 @@ namespace GESAMM
                         tb_contre_indication_medicament.Clear();
                         nud_prix_echantillon_medicament.Value = 0;
                         tb_AMM_medicament.Clear();
+
+                        Global.ReloadData();
                     }
                     else
                     {

@@ -10,12 +10,13 @@ namespace GESAMM
 {
     public static class Global
     {
-        public static string username;
+        public static int userId;
         public static SqlConnection db { get; private set; }
 
         public static Dictionary<string, Famille> familles;
         public static Dictionary<string, Medicament> medicaments;
         public static List<Etape> etapes;
+        public static Dictionary<int, EtapeNormee> etapesNormees;
         public static List<Decision> decisions;
         public static List<Utilisateur> utilisateurs;
 
@@ -62,6 +63,7 @@ namespace GESAMM
                 familles = new Dictionary<string, Famille>();
                 medicaments = new Dictionary<string, Medicament>();
                 etapes = new List<Etape>();
+                etapesNormees = new Dictionary<int, EtapeNormee>();
                 decisions = new List<Decision>();
                 utilisateurs = new List<Utilisateur>();
 
@@ -90,15 +92,30 @@ namespace GESAMM
                     medicaments.Add(medicament.getDepotLegal(), medicament);
                 }
 
-                //Etapes
-                string sql = "SELECT ETA_NUM, ETA_LIBELLE from etape";
+                //Normes des étapes
+                string sql = "SELECT ETA_NUM, NORME, DATENORME from etapenorme";
                 request = new SqlCommand(sql, db);
                 request.CommandType = System.Data.CommandType.Text;
                 sqlReader = await request.ExecuteReaderAsync();
 
                 while (await sqlReader.ReadAsync())
                 {
-                    etapes.Add(new(int.Parse(sqlReader["ETA_NUM"].ToString()), sqlReader["ETA_LIBELLE"].ToString()));
+                    int id = int.Parse(sqlReader["ETA_NUM"].ToString());
+                    etapesNormees.Add(id, new(id, sqlReader["NORME"].ToString(), sqlReader["DATENORME"].ToString()));
+                }
+
+                //Etapes
+                sql = "SELECT ETA_NUM, ETA_LIBELLE from etape";
+                request = new SqlCommand(sql, db);
+                request.CommandType = System.Data.CommandType.Text;
+                sqlReader = await request.ExecuteReaderAsync();
+
+                while (await sqlReader.ReadAsync())
+                {
+                    int id = int.Parse(sqlReader["ETA_NUM"].ToString());
+                    EtapeNormee etapeNorme = etapesNormees[id];
+                    bool estNormee = etapeNorme.getNorme() != "";
+                    etapes.Add(new(id, sqlReader["ETA_LIBELLE"].ToString(), estNormee ? etapeNorme : null));
                 }
 
                 //Decisions
@@ -146,12 +163,10 @@ namespace GESAMM
             catch (Exception e) { MessageBox.Show(e.Message); }
         }
 
-        public static void ReloadData(bool displayResult = false)
+        public static async Task ReloadData(bool displayResult = false)
         {
-            var request = LoadFirstData().ContinueWith(x =>
-            {
-                if (displayResult) MessageBox.Show("Rechargement terminé");
-            });
+            await LoadFirstData();
+            if (displayResult) MessageBox.Show("Rechargement terminé");
         }
     }
 }
