@@ -143,7 +143,7 @@ namespace GESAMM
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Highlight;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1143, 537);
             Controls.Add(gb_medic_par_famille);
             Controls.Add(gb_liste_famille_medicament);

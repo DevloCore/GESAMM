@@ -240,7 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Highlight;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(791, 405);
             Controls.Add(gb_formulaire_ajout_medic);
             Margin = new Padding(3, 2, 3, 2);
