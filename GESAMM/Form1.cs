@@ -59,6 +59,7 @@ namespace GESAMM
             {
                 if(unUtil.getNom() == tb_username.Text && unUtil.getPassword() == tb_password.Text)
                 {
+                    Global.userId = unUtil.getId();
                     new Menu().Show(this);
                     Hide();
                     return;
